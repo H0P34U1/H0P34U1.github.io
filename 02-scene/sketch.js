@@ -31,7 +31,7 @@ let isDrawingEnabled;
 
 
 function setup() {
-  createCanvas(windowHeight, windowHeight);
+  createCanvas(windowWidth, windowHeight);
   background(250);
 
   pencilColor = color(0, 0, 0);
@@ -67,7 +67,7 @@ function trail() {
 
 function mouseWheel(event) {
   thickness += event.delta / 100; 
-  thickness = constrain(thickness, 1, 20);
+  thickness = constrain(thickness, 1, 30);
   return false; 
 }
 
