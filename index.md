@@ -4,7 +4,7 @@
 - [Bouncing Ball](01-ball)
 
 ## Projects
-- add your assignment here 
+- [Interactive Scene](02-scene)
 
 ## Example Markdown Link
 - [Some Document Title](01-demo-folder)
