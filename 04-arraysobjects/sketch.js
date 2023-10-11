@@ -6,8 +6,11 @@
 // - describe what you did to take this project "above and beyond"
 
 
+let Mystudents;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  Mystudents = "lol";
 }
 
 function draw() {
