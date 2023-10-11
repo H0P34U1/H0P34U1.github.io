@@ -10,6 +10,8 @@ function draw() {
   background(220);
   moveBall();
   displayBall();
+  fill("black");                              //here
+  text(Math.floor(frameRate()), 50, 50);
 }
 
 function keyTyped() {
