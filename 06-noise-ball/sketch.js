@@ -4,7 +4,7 @@ let ballArray = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background("white");
+  // background("white");
   noStroke();
   spawnBall();
   //spawn a new ball every two seconds
@@ -12,6 +12,7 @@ function setup() {
 }
 
 function draw() {
+  background("white");
   for (let theBall of ballArray) {
     fill(theBall.color);
     //move
