@@ -10,7 +10,7 @@ let Mystudents;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  Mystudents = "lol";
+  Mystudents = "why are we here, just to suffer";
 }
 
 function draw() {

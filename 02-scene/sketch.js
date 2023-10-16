@@ -29,7 +29,6 @@ let thickness;
 let isDrawingEnabled;
 
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(250);
@@ -84,17 +83,17 @@ function keyPressed() {
     } else if (key === "o") {
       pencilColor = color(255, 127, 0); // Change color to orange
     } else if (key === "v") {
-      pencilColor = color(148, 0, 211); // Change color to violet
-    } else if (key === "q") {
-      pencilColor = color(250, 250, 250); // Change color to white
-    } else if (key === "w") {
-      pencilColor = color(0, 0, 0); // Change color to black
-    } else if (key === "e") {
-      background(250); // erase everything
-    } else if (key === "P") {
+      pencilColor = color(148, 0, 211); // Change color to violet  
+    } else if (key === "q") {                                 
+      pencilColor = color(250, 250, 250); // Change color to white 
+    } else if (key === "w") {                               
+      pencilColor = color(0, 0, 0); // Change color to black     
+    } else if (key === "e") {                                   
+      background(250); // erase everything                    
+    } else if (key === "P") {                               
       rectangles.push(new Rectangle(mouseX, mouseY, 50, 50)); //creates rectangle
-    } else if (key === "n") {
-      eraseRectangles(); //erase rect
+    } else if (key === "n") {                              
+      eraseRectangles(); // erase rect                         
     }
   }
 }
