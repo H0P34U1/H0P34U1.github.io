@@ -27,7 +27,11 @@ let pencilColor;
 let state;
 let thickness;
 let isDrawingEnabled;
+let colorCode; 
 
+function preload() {
+  colorCode = loadImage("color.jpg");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -37,6 +41,8 @@ function setup() {
   state = "drawing";
   thickness = 5;
   isDrawingEnabled = false;
+
+  imageMode(CENTER);
 }
 
 function draw() {
@@ -44,11 +50,13 @@ function draw() {
     trail();
   } 
 
+  image(colorCode, 5, 5, 30);
+
   textAlign(CENTER, CENTER);
   textSize(26);
   text("Drawing Game", width/2, 30);
-  
-  
+
+
   rectangles.forEach(rectangle => {
     rectangle.display();
   });    
@@ -97,6 +105,7 @@ function keyPressed() {
     }
   }
 }
+
 
 function eraseRectangles() {
   rectangles = []; 
