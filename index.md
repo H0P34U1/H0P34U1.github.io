@@ -5,6 +5,7 @@
 - [Ball object Notation](03-ballobject)
 - [Ball array](05-ball-array)
 - [Perlian Noise Ball](06-noise-ball)
+- [sound and rotate](08-sound)
 
 ## Projects
 - [Interactive Scene](02-scene)
