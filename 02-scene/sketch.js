@@ -1,36 +1,41 @@
 /*
 Abdul Frimpong
-10/2/2023
-click m to activate the pencil to start drawing.
-to change the pencil color click the keys r,o,y,g,b,v.
-click q to switch to the eraser.
-click w to switch back the normal pencil.
+10/17/2023
+click spacebar to activate the pencil.
 click e to erase everything on screen.
-click p to spawn rectangles directly on the cursor.
-click n then e to erase the rectangles.
-Scroll with your mouse to increase/decrease pencil and eraser thickness
-The header will fill with which ever color you are using.
-
-Extra For Experts:
-Using the trail to draw
-using the mouse scroll
-spawning and erasing rectangles
-
-Also i am confused as to how to add the start screen with a click to play 
-button because i need to background to not loop to draw, I couldnt get it
-to work on this.
-
+Scroll with your mouse to increase/decrease pencil thickness
 */
 
-let rectangles = [];
 let pencilColor;
-let state;
 let thickness;
 let isDrawingEnabled;
-let colorCode; 
 
-function preload() {
-  colorCode = loadImage("color.jpg");
+function colorCode(){
+  noStroke();
+  fill(200, 200, 200);
+  rect(0, 0, 40, height/6);
+  fill("black");
+  rect(0, 50, 40, height/6);
+  fill("red");
+  rect(0, 100, 40, height/6);
+  fill(153, 51, 0);
+  rect(0, 150, 40, height/6);
+  fill("orange");
+  rect(0, 200, 40, height/6);
+  fill("yellow");
+  rect(0, 250, 40, height/6);
+  fill("lime");
+  rect(0, 300, 40, height/6);
+  fill("green");
+  rect(0, 350, 40, height/6);
+  fill("aqua"); 
+  rect(0, 400, 40, height/6);
+  fill("blue");
+  rect(0, 450, 40, height/6);
+  fill("purple");
+  rect(0, 500, 40, height/6);
+  fill(255, 102, 255);
+  rect(0, 550, 40, height/6);
 }
 
 function setup() {
@@ -38,28 +43,71 @@ function setup() {
   background(250);
 
   pencilColor = color(0, 0, 0);
-  state = "drawing";
   thickness = 5;
   isDrawingEnabled = false;
-
-  imageMode(CENTER);
 }
 
 function draw() {
   if (isDrawingEnabled) {
     trail();
-  } 
+  }
 
-  image(colorCode, 5, 5, 30);
+  noStroke();
+  fill(50, 50, 50);
+  rect(windowWidth/2, 0, 550, 50, 80);
+  fill(pencilColor);
+  ellipse(650, 22, 25);
+  fill("white");
+  ellipse(600, 22, thickness);
 
-  textAlign(CENTER, CENTER);
+  
+  noStroke();
   textSize(26);
-  text("Drawing Game", width/2, 30);
+  fill("white");
+  text("Drawing Game", 750, 30);  
+  
+  colorCode();
+}
 
-
-  rectangles.forEach(rectangle => {
-    rectangle.display();
-  });    
+function mousePressed() {
+  if (mouseX < 20) {
+    if (mouseY < 50) {
+      pencilColor = color(250, 250, 250);
+    }
+    else if (mouseY < 100) {
+      pencilColor = color("black");
+    }
+    else if (mouseY < 150) {
+      pencilColor = color("red");
+    }
+    else if (mouseY < 200) {
+      pencilColor = color(153, 51, 0);
+    }
+    else if (mouseY < 250) {
+      pencilColor = color("orange");
+    }
+    else if (mouseY < 300) {
+      pencilColor = color("yellow");
+    }
+    else if (mouseY < 350) {
+      pencilColor = color("lime");
+    }
+    else if (mouseY < 400) {
+      pencilColor = color("green");
+    }
+    else if (mouseY < 450) {
+      pencilColor = color("aqua");
+    }
+    else if (mouseY < 500) {
+      pencilColor = color("blue");
+    }
+    else if (mouseY < 550) {
+      pencilColor = color("purple");
+    }
+    else if (mouseY < 600) {
+      pencilColor = color(255, 102, 255);
+    }
+  }
 }
 
 function trail() {
@@ -72,53 +120,17 @@ function trail() {
 
 function mouseWheel(event) {
   thickness += event.delta / 100; 
-  thickness = constrain(thickness, 1, 30);
+  thickness = constrain(thickness, 1, 20);
   return false; 
 }
 
 function keyPressed() {
-  if (key === "m") {
+  if (key === " ") {
     isDrawingEnabled = !isDrawingEnabled;
-  } else if (isDrawingEnabled) {
-    if (key === "r") {
-      pencilColor = color(255, 0, 0);  // Change color to red
-    } else if (key === "g") {
-      pencilColor = color(0, 255, 0); // Change color to green
-    } else if (key === "b") {
-      pencilColor = color(0, 0, 255); // Change color to blue
-    } else if (key === "y") {
-      pencilColor = color(255, 255, 0); // Change color to yellow
-    } else if (key === "o") {
-      pencilColor = color(255, 127, 0); // Change color to orange
-    } else if (key === "v") {
-      pencilColor = color(148, 0, 211); // Change color to violet  
-    } else if (key === "q") {                                 
-      pencilColor = color(250, 250, 250); // Change color to white 
-    } else if (key === "w") {                               
-      pencilColor = color(0, 0, 0); // Change color to black     
-    } else if (key === "e") {                                   
-      background(250); // erase everything                    
-    } else if (key === "P") {                               
-      rectangles.push(new Rectangle(mouseX, mouseY, 50, 50)); //creates rectangle
-    } else if (key === "n") {                              
-      eraseRectangles(); // erase rect                         
-    }
+  } 
+  else if (isDrawingEnabled) {
+    if (key === "e") {
+      background(250); // erase everything
+    } 
   }
-}
-
-
-function eraseRectangles() {
-  rectangles = []; 
-}
-
-class Rectangle {
-  constructor(x, y, width, height) {
-    this.x = x;
-    this.y = y;
-  }
-
-  display() {
-    noFill();
-    rect(this.x, this.y, 50, 50);
-  }   
 }
