@@ -6,6 +6,7 @@
 - [Ball array](05-ball-array)
 - [Perlian Noise Ball](06-noise-ball)
 - [sound and rotate](08-sound)
+- [terrain generation](10-terrain)
 
 ## Projects
 - [Interactive Scene](02-scene)
