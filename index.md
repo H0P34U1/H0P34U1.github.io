@@ -8,6 +8,7 @@
 - [sound and rotate](08-sound)
 - [terrain generation](10-terrain)
 - [draw a grid](11-2Dgrid)
+- [Grid neighbors](12-neighbors)
 
 ## Projects
 - [Interactive Scene](02-scene)
