@@ -9,6 +9,7 @@
 - [terrain generation](10-terrain)
 - [draw a grid](11-2Dgrid)
 - [Grid neighbors](12-neighbors)
+- [Game of life](13-GameLife)
 
 ## Projects
 - [Interactive Scene](02-scene)
