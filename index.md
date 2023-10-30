@@ -10,6 +10,7 @@
 - [draw a grid](11-2Dgrid)
 - [Grid neighbors](12-neighbors)
 - [Game of life](13-GameLife)
+- [WASD grid](14-WASD)
 
 ## Projects
 - [Interactive Scene](02-scene)
