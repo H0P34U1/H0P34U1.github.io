@@ -1,10 +1,13 @@
 // Character in grid demo
 
 let grid;
-const GRID_SIZE = 40;
+const GRID_SIZE = 20;
 let cellSize;
 let playerX = 0;
 let playerY = 0;
+let player2X = 19;
+let player2Y = 19;
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -12,6 +15,7 @@ function setup() {
 
   //put player in the grid
   grid[playerY][playerX] = 9;
+  grid[player2Y][player2X] = 3;
 
   if (height > width) {
     cellSize = width/GRID_SIZE;
@@ -54,8 +58,6 @@ function movePlayer(x, y) {
 
     //check if we are hitting a wall
     if (grid[playerY + y][playerX + x] === 0) {
-      let tempX = playerX; //dlt this
-      let tempY = playerY; //dlt this
 
 
       playerX += x;
@@ -63,7 +65,24 @@ function movePlayer(x, y) {
 
       //update grid here
       grid[playerY][playerX] = 9;
-      grid[tempX][tempY] = 0; //dlt this
+    } 
+  } 
+}
+
+function movePlayer2(x, y) {
+  //edge case check
+  if (player2X + x >= 0 && player2X + x < GRID_SIZE &&
+      player2Y + y >= 0 && player2Y + y < GRID_SIZE) {
+
+    //check if we are hitting a wall
+    if (grid[player2Y + y][player2X + x] === 0) {
+
+
+      player2X += x;
+      player2Y += y;
+
+      //update grid here
+      grid[player2Y][player2X] = 9;
     } 
   } 
 }
@@ -99,6 +118,9 @@ function displayGrid() {
       }
       else if (grid[y][x] === 9) {
         fill("green");
+      }
+      else if (grid[y][x] === 3) {
+        fill("red");
       }
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
