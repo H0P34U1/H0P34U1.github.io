@@ -16,6 +16,7 @@
 - [Interactive Scene](02-scene)
 - [Arrays Objects Assignment](04-arraysobjects)
 - [Arrays and Notation](09-arrays-notation)
+- [Grid Game](15-GridGame)
 
 ## Example Markdown Link
 - [Some Document Title](01-demo-folder)
