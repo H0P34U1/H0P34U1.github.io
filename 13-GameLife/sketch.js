@@ -1,9 +1,14 @@
 // Game of Life
 
 let grid;
-const GRID_SIZE = 30;
+const GRID_SIZE = 40;
 let cellSize;
 let Autoplay = true;
+let gosperGun;
+
+function preload() {
+  gosperGun = loadJSON("gosper gun.json");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -37,6 +42,9 @@ function keyTyped() {
   }
   else if (key === "a") {
     Autoplay = !Autoplay;
+  }
+  else if (key === "g") {
+    grid = gosperGun;
   }
 }
 
@@ -112,10 +120,10 @@ function displayGrid() {
   for (let y = 0; y < GRID_SIZE; y++) {
     for (let x = 0; x < GRID_SIZE; x++) {
       if (grid[y][x] === 0) {
-        fill("white");
+        fill("blue");
       }
       else if (grid[y][x] === 1) {
-        fill("black");
+        fill("red");
       }
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
