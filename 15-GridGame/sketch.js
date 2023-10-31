@@ -11,7 +11,7 @@ let player2Y = 19;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  grid = generateRandomGrid(GRID_SIZE, GRID_SIZE);
+  grid = generateEmptyGrid(GRID_SIZE, GRID_SIZE);
 
   //put player in the grid
   grid[playerY][playerX] = 9;
@@ -31,10 +31,7 @@ function draw() {
 }
 
 function keyTyped() {
-  if (key === "r") {
-    grid = generateRandomGrid(GRID_SIZE, GRID_SIZE);
-  }
-  else if (key === "e") {
+  if (key === "e") {
     grid = generateEmptyGrid(GRID_SIZE, GRID_SIZE);
   }
   else if (key === "s") { //move down
@@ -87,34 +84,11 @@ function movePlayer2(x, y) {
   } 
 }
 
-
-function mousePressed() {
-  let y = Math.floor(mouseY/cellSize);
-  let x = Math.floor(mouseX/cellSize);
-
-  toggleCell(x, y);   //current cell
-}
-
-function toggleCell(x, y) {
-  //check that we are within the grid, then toggle
-  if (x >= 0 && x < GRID_SIZE && y >= 0 && y < GRID_SIZE) {
-    if (grid[y][x] === 0) {
-      grid[y][x] = 1;
-    }
-    else if (grid[y][x] === 1) {
-      grid[y][x] = 0;
-    }
-  }
-}
-
 function displayGrid() {
   for (let y = 0; y < GRID_SIZE; y++) {
     for (let x = 0; x < GRID_SIZE; x++) {
       if (grid[y][x] === 0) {
         fill("white");
-      }
-      else if (grid[y][x] === 1) {
-        fill("black");
       }
       else if (grid[y][x] === 9) {
         fill("green");
@@ -125,22 +99,6 @@ function displayGrid() {
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
   }
-}
-
-function generateRandomGrid(cols, rows) {
-  let newGrid = [];
-  for (let y = 0; y < rows; y++) {
-    newGrid.push([]);
-    for (let x = 0; x < cols; x++) {
-      if (random(100) < 50) {
-        newGrid[y].push(0);
-      }
-      else {
-        newGrid[y].push(1);
-      }
-    }
-  }
-  return newGrid;
 }
 
 function generateEmptyGrid(cols, rows) {
