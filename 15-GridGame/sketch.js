@@ -46,6 +46,9 @@ function keyTyped() {
   else if (key === "d") { //move right
     movePlayer(1, 0);
   }
+  else if (key === 38) { //move up
+    movePlayer2(0, -1);
+  }
 }
 
 function movePlayer(x, y) {
