@@ -46,8 +46,19 @@ function keyTyped() {
   else if (key === "d") { //move right
     movePlayer(1, 0);
   }
-  else if (key === 38) { //move up
+
+
+  else if (key === "k") { //move down
+    movePlayer2(0, 1);
+  }
+  else if (key === "i") { //move up
     movePlayer2(0, -1);
+  }
+  else if (key === "j") { //move left
+    movePlayer2(-1, 0);
+  }
+  else if (key === "l") { //move right
+    movePlayer2(1, 0);
   }
 }
 
@@ -82,7 +93,7 @@ function movePlayer2(x, y) {
       player2Y += y;
 
       //update grid here
-      grid[player2Y][player2X] = 9;
+      grid[player2Y][player2X] = 3;
     } 
   } 
 }
@@ -91,7 +102,7 @@ function displayGrid() {
   for (let y = 0; y < GRID_SIZE; y++) {
     for (let x = 0; x < GRID_SIZE; x++) {
       if (grid[y][x] === 0) {
-        fill("white");
+        fill("black");
       }
       else if (grid[y][x] === 9) {
         fill("green");
