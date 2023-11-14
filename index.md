@@ -12,6 +12,7 @@
 - [Game of life](13-GameLife)
 - [WASD grid](14-WASD)
 - [dog-opp](16-dog-opp)
+- [walker-opp](17-walker-opp)
 
 ## Projects
 - [Interactive Scene](02-scene)
