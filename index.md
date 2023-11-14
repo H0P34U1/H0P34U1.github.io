@@ -11,6 +11,7 @@
 - [Grid neighbors](12-neighbors)
 - [Game of life](13-GameLife)
 - [WASD grid](14-WASD)
+- [dog-opp](16-dog-opp)
 
 ## Projects
 - [Interactive Scene](02-scene)
