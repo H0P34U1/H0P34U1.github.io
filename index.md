@@ -14,6 +14,7 @@
 - [dog-opp](16-dog-opp)
 - [walker-opp](17-walker-opp)
 - [ball-opp](18-ball-opp)
+- [connected-ball-oop](19-nodes)
 
 ## Projects
 - [Interactive Scene](02-scene)
