@@ -1,5 +1,3 @@
-// Connected nodes oop demo
-
 let points = [];
 
 function setup() {
@@ -10,8 +8,11 @@ function draw() {
   background(220);
   for (let point of points) {
     point.update();
+    point.connectTo(points);
+  }
+
+  for (let point of points) {
     point.display();
-    point.connectTo();
   }
 }
 
@@ -26,8 +27,8 @@ class MovingPoint {
     this.y = y;
     this.color = color(random(255), random(255), random(255));
     this.radius = 15;
-    this.xtime = random(1000);
-    this.ytime = random(1000);
+    this.xTime = random(1000);
+    this.yTime = random(1000);
     this.deltaTime = 0.01;
     this.reach = 150;
   }
@@ -38,8 +39,8 @@ class MovingPoint {
     circle(this.x, this.y, this.radius*2);
   }
 
-
   update() {
+    //move point
     let dx = noise(this.xTime);
     this.dx = map(dx, 0, 1, -5, 5);
     let dy = noise(this.yTime);
@@ -48,27 +49,39 @@ class MovingPoint {
     this.x += this.dx;
     this.y += this.dy;
 
-    this.xtime += this.deltaTime;
+    this.xTime += this.deltaTime;
     this.yTime += this.deltaTime;
 
-    if (this.x > 0) {
+    //wrap around screen
+    if (this.x < 0) {
       this.x += width;
     }
     if (this.x > width) {
-      this.x += width;
+      this.x -= width;
     }
-    if (this.y > 0) {
+    if (this.y < 0) {
       this.y += height;
     }
     if (this.y > height) {
-      this.y += height;
+      this.y -= height;
+    }
+
+    let mouseDistance = dist(this.x, this.y, mouseX, mouseY);
+    if (mouseDistance < this.reach) {
+      //make circle bigger
+      let theSize = map(mouseDistance, 0, this.reach, 3000, 15);
+      this.radius = theSize;
+    }
+    else {
+      this.radius = 15;
     }
   }
 
   connectTo(pointsArray) {
     for (let otherPoint of pointsArray) {
       if (this !== otherPoint) {
-        if (dist(this.x, this.y, otherPoint.x, otherPoint.y) < this.reach) {
+        if (dist(this.x, this.y, otherPoint.x, otherPoint.y) <
+             this.reach) {
           stroke(this.color);
           line(this.x, this.y, otherPoint.x, otherPoint.y);
         }
