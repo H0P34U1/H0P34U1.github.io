@@ -1,4 +1,4 @@
-// Fireworks OOP Demo
+// Fireworks
 
 let theFireworks = [];
 
@@ -9,16 +9,16 @@ function setup() {
 function draw() {
   background("black");
 
-  // for (let particle of theFireworks) {
+  // for (let Particle of theFireworks) {
   for (let i = theFireworks.length-1; i >= 0; i--) {
-    let particle = theFireworks[i];
-    particle.update();
-    if (particle.isDead()) {
+    let Particle = theFireworks[i];
+    Particle.update();
+    if (Particle.isDead()) {
       //remove from array
       theFireworks.splice(i, 1);
     }
     else {
-      particle.display();
+      Particle.display();
     }
   }
 }
@@ -40,7 +40,7 @@ class Particle {
     this.dy = dy;
     this.radius = 5;
     this.r = 255;
-    this.g = 0;
+    this.g = 0;    
     this.b = 0;
     this.alpha = 255;
   }
@@ -48,14 +48,13 @@ class Particle {
   display() {
     noStroke();
     fill(this.r, this.g, this.b, this.alpha);
-    circle(this.x, this.y, this.radius*2);
+    circle(this.x, this.y, this.radius*2); 
   }
 
   update() {
     //move
     this.x += this.dx;
     this.y += this.dy;
-
     //get more transparent
     this.alpha--;
   }
