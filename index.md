@@ -17,6 +17,7 @@
 - [connected-ball-oop](19-nodes)
 - [Fireworks](20-fireworks)
 - [ParticleSum](21-PartSum)
+- [CollisionDemo](22-Collision)
 
 ## Projects
 - [Interactive Scene](02-scene)
