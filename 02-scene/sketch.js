@@ -57,13 +57,13 @@ function colorCode() {
 }
 
 function pencil() {
-  if ((mouseX < 100, mouseY < 100)) {
+  if (mouseX < 100, mouseY < 100) {
     isDrawingEnabled = !isDrawingEnabled;
   }
 }
 
 function lining() {
-  if ((mouseY < 100, mouseX < 200)) {
+  if (mouseY < 100, mouseX < 200) {
     isLiningEnabled = !isLiningEnabled;
     if (isLiningEnabled) {
       previousPos.x = mouseX;
@@ -123,31 +123,43 @@ function mousePressed() {
   if (mouseX < 20) {
     if (mouseY < 50) {
       pencilColor = color(250, 250, 250);
-    } else if (mouseY < 100) {
+    }
+    else if (mouseY < 100) {
       pencilColor = color("black");
-    } else if (mouseY < 150) {
+    }
+    else if (mouseY < 150) {
       pencilColor = color("red");
-    } else if (mouseY < 200) {
+    }
+    else if (mouseY < 200) {
       pencilColor = color(153, 51, 0);
-    } else if (mouseY < 250) {
+    }
+    else if (mouseY < 250) {
       pencilColor = color("orange");
-    } else if (mouseY < 300) {
+    }
+    else if (mouseY < 300) {
       pencilColor = color("yellow");
-    } else if (mouseY < 350) {
+    }
+    else if (mouseY < 350) {
       pencilColor = color("lime");
-    } else if (mouseY < 400) {
+    }
+    else if (mouseY < 400) {
       pencilColor = color("green");
-    } else if (mouseY < 450) {
+    }
+    else if (mouseY < 450) {
       pencilColor = color("aqua");
-    } else if (mouseY < 500) {
+    }
+    else if (mouseY < 500) {
       pencilColor = color("blue");
-    } else if (mouseY < 550) {
+    }
+    else if (mouseY < 550) {
       pencilColor = color("purple");
-    } else if (mouseY < 600) {
+    }
+    else if (mouseY < 600) {
       pencilColor = color(255, 102, 255);
-    } else if (mouseX < 100, mouseY < 100) {
-    isDrawingEnabled = !isDrawingEnabled;
-  }
+    }
+    else if (mouseX < 100, mouseY < 100) {
+      isDrawingEnabled = !isDrawingEnabled;
+    }
   }
 }
 
@@ -173,14 +185,14 @@ function keyPressed() {
   }
   if (isLiningEnabled) {
     if (key === "e") {
-      background(250)
-      set: previousPos.x = undefined;
-      set: previousPos.y = undefined;
+      background(250);
+      previousPos.x = undefined;
+      previousPos.y = undefined;
     }
     else if (isLiningEnabled) {
       if (key === "r") {
-        set: previousPos.x = undefined;
-        set: previousPos.y = undefined;
+        previousPos.x = undefined;
+        previousPos.y = undefined;
       }
     }
   }

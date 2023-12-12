@@ -1,7 +1,7 @@
 // Character in grid demo
 
 let grid;
-const GRID_SIZE = 40;
+const GRID_SIZE = 20;
 let cellSize;
 let playerX = 0;
 let playerY = 0;
