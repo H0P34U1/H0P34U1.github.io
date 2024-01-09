@@ -24,6 +24,7 @@
 - [Arrays Objects Assignment](04-arraysobjects)
 - [Arrays and Notation](09-arrays-notation)
 - [Grid Game](15-GridGame)
+- [Recursion](23-Recursion)
 
 ## Example Markdown Link
 - [Some Document Title](01-demo-folder)
