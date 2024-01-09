@@ -18,6 +18,7 @@
 - [Fireworks](20-fireworks)
 - [ParticleSum](21-PartSum)
 - [CollisionDemo](22-Collision)
+- [Seirpinski](23-Seirpinski)
 
 ## Projects
 - [Interactive Scene](02-scene)
